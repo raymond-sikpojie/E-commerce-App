@@ -1,0 +1,68 @@
+.home-main {
+  height: 80vh;
+  /* margin: 0 auto; */
+}
+
+/* img {
+  height: 80vh;
+
+  width: 100%;
+} */
+
+.first-row {
+  background-image: url("https://res.cloudinary.com/ds57wvvno/image/upload/v1584790287/test2_ikvccv.jpg");
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-row .heading {
+  margin: 20px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.788);
+  text-transform: uppercase;
+  color: black;
+}
+/* For background image opacity */
+/* .first-row:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0.5;
+  background-image: url("https://res.cloudinary.com/ds57wvvno/image/upload/v1584790287/test2_ikvccv.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+.shop-btn {
+  width: 300px;
+  height: 80px;
+  padding: 20px;
+  background: rgb(245, 233, 195);
+  color: darkred;
+  border: 2px solid black;
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.4s, color 0.4s;
+  border-radius: 5px;
+}
+
+.shop-btn:hover {
+  background-color: black;
+  color: rgb(223, 222, 222);
+}
