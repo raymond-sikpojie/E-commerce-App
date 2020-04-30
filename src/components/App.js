@@ -13,7 +13,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Consumer>
-        {context => (
+        {(context) => (
           <div>
             <Navbar />
 
@@ -23,7 +23,7 @@ const App = () => {
             <Route path="/products" component={Products} />
             <Route path="/cart" component={Cart} />
             {/* <Cart /> */}
-            {/* <Products /> */}
+            <Products />
             <Footer />
           </div>
         )}
