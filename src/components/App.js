@@ -19,11 +19,13 @@ const App = () => {
 
             {/* <button onClick={context.testing}>Test</button> */}
 
+            <Route path="/E-commerce-App" component={Home} />
             <Route exact path="/" component={Home} />
             <Route path="/products" component={Products} />
             <Route path="/cart" component={Cart} />
             {/* <Cart /> */}
-            <Products />
+            {/* <Products /> */}
+            {/* <Home /> */}
             <Footer />
           </div>
         )}
