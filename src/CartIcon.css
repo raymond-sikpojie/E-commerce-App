@@ -3,6 +3,7 @@
 
 .cart-icon {
   display: flex;
+  margin-left: 0;
   flex-direction: row;
   justify-content: center;
   align-items: center;
