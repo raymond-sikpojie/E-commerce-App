@@ -14,7 +14,7 @@ export class Provider extends Component {
         imageUrl:
           "https://res.cloudinary.com/ds57wvvno/image/upload/v1583920182/iPhone11_aag97k.jpg",
         imageDescription: "iphone 11",
-        itemId: 1 + Math.random()
+        itemId: 1 + Math.random(),
       },
       {
         name: "iphone X",
@@ -24,7 +24,7 @@ export class Provider extends Component {
         imageUrl:
           "https://res.cloudinary.com/ds57wvvno/image/upload/v1583920182/iPhoneX_tlgr09.jpg",
         imageDescription: "iphone X",
-        id: 1 + Math.random()
+        id: 1 + Math.random(),
       },
       {
         name: "Samsung galaxy s10e",
@@ -34,7 +34,7 @@ export class Provider extends Component {
         imageUrl:
           "https://res.cloudinary.com/ds57wvvno/image/upload/v1583920182/samsung_galaxy_s10_lobsdd.jpg",
         imageDescription: "Galaxy s10e",
-        id: 1 + Math.random()
+        id: 1 + Math.random(),
       },
       {
         name: "Huawei p30 pro",
@@ -44,7 +44,7 @@ export class Provider extends Component {
         imageUrl:
           "https://res.cloudinary.com/ds57wvvno/image/upload/v1583920183/huawei_p30_pro_gvolr1.jpg",
         imageDescription: "Huawei p30",
-        id: 1 + Math.random()
+        id: 1 + Math.random(),
       },
       {
         name: "Samsung galaxy s20",
@@ -55,7 +55,7 @@ export class Provider extends Component {
           "https://res.cloudinary.com/ds57wvvno/image/upload/v1583920182/samsung_galaxy_s11_wdxu6k.jpg",
 
         imageDescription: "galaxy s20",
-        id: 1 + Math.random()
+        id: 1 + Math.random(),
       },
       {
         name: "Motorola Razr",
@@ -63,11 +63,11 @@ export class Provider extends Component {
         description:
           "The Razr 2019 is a phone brimming with nostalgia and this is both a positive and a negative",
         imageUrl:
-          "https://res.cloudinary.com/ds57wvvno/image/upload/v1584802217/Motorola_pydgud.jpg",
+          "https://res.cloudinary.com/ds57wvvno/image/upload/v1597920796/motorola-razr-2019-1-500x500_tm5e6q.jpg",
 
         imageDescription: "motorola razr",
-        id: 1 + Math.random()
-      }
+        id: 1 + Math.random(),
+      },
     ],
     cart: [],
     totalCartPrice: [],
@@ -75,7 +75,7 @@ export class Provider extends Component {
     cartLength: 0,
     itemCounterArray: [],
     itemCounterValue: "",
-    searchFilter: []
+    searchFilter: [],
   };
 
   testing = () => {
@@ -86,14 +86,14 @@ export class Provider extends Component {
 
   updateTotalCartPrice = () => {
     let cartPrice = [...this.state.totalCartPrice];
-    this.state.cart.map(arr => {
+    this.state.cart.map((arr) => {
       let item = arr.price;
       if (this.state.totalCartPrice.includes(item)) {
         return;
       } else {
         cartPrice.push(item);
         return this.setState({
-          totalCartPrice: cartPrice
+          totalCartPrice: cartPrice,
         });
       }
     });
@@ -105,30 +105,30 @@ export class Provider extends Component {
       return accumulator + currentValue;
     }, 0);
     this.setState({
-      sumOfCartPrice: sum
+      sumOfCartPrice: sum,
     });
   };
 
   updateCartLength = () => {
     this.setState({
-      cartLength: this.state.cart.length
+      cartLength: this.state.cart.length,
     });
   };
 
-  updateItemCounter = id => {
-    const findIndex = this.state.cart.findIndex(arr => {
+  updateItemCounter = (id) => {
+    const findIndex = this.state.cart.findIndex((arr) => {
       return arr.id === id;
     });
 
     let itemCounterArray = [...this.state.itemCounterArray];
     itemCounterArray.push(this.state.cart[findIndex]);
     this.setState({
-      itemCounterValue: itemCounterArray.length
+      itemCounterValue: itemCounterArray.length,
     });
   };
 
-  addToCart = itemId => {
-    const findIndex = this.state.phones.findIndex(arr => {
+  addToCart = (itemId) => {
+    const findIndex = this.state.phones.findIndex((arr) => {
       return arr.id === itemId;
     });
 
@@ -139,7 +139,7 @@ export class Provider extends Component {
     } else {
       newCart.push(this.state.phones[findIndex]);
       this.setState({
-        cart: newCart
+        cart: newCart,
       });
       // Make updateCartLength, updateTotalCartPrice and sumOfTotalCartPrice asynchronuos so as make time for the item object to be pushed to cart.
       setTimeout(this.updateCartLength, 0);
@@ -150,7 +150,7 @@ export class Provider extends Component {
       let itemCounterArray = [...this.state.itemCounterArray];
       itemCounterArray.push(this.state.phones[findIndex]);
       this.setState({
-        itemCounterValue: 1
+        itemCounterValue: 1,
       });
     }
   };
@@ -161,7 +161,7 @@ export class Provider extends Component {
   // Push the it's price to the totalCartPrice array.
 
   incrementCartItem = (itemId, itemPrice) => {
-    let findIndex = this.state.cart.findIndex(val => {
+    let findIndex = this.state.cart.findIndex((val) => {
       return val.price === itemPrice;
     });
 
@@ -170,7 +170,7 @@ export class Provider extends Component {
     totalCartPrice.push(cartItemPrice);
 
     this.setState({
-      totalCartPrice: totalCartPrice
+      totalCartPrice: totalCartPrice,
     });
     // Update sum of the totalCartPrice
     setTimeout(this.sumOfTotalCartPrice, 0);
@@ -181,7 +181,7 @@ export class Provider extends Component {
     if (findIndex) {
       itemCounterArray.push(this.state.cart[findIndex]);
       this.setState({
-        itemCounterArray: itemCounterArray
+        itemCounterArray: itemCounterArray,
       });
     }
 
@@ -213,11 +213,11 @@ export class Provider extends Component {
     let totalCartPrice = [...this.state.totalCartPrice];
 
     let itemMatch;
-    let priceIndex = totalCartPrice.findIndex(val => {
+    let priceIndex = totalCartPrice.findIndex((val) => {
       return (itemMatch = val === itemPrice);
     });
 
-    let filteredItemArray = totalCartPrice.filter(val => {
+    let filteredItemArray = totalCartPrice.filter((val) => {
       return val === itemPrice;
     });
 
@@ -229,7 +229,7 @@ export class Provider extends Component {
     }
 
     this.setState({
-      totalCartPrice: totalCartPrice
+      totalCartPrice: totalCartPrice,
     });
 
     //console.log(priceIndex);
@@ -243,7 +243,7 @@ export class Provider extends Component {
 
   removeItemHandler = (itemId, itemPrice) => {
     let itemMatch;
-    let findIndex = this.state.cart.findIndex(val => {
+    let findIndex = this.state.cart.findIndex((val) => {
       return (itemMatch = val.id === itemId);
     });
 
@@ -254,7 +254,7 @@ export class Provider extends Component {
     }
 
     this.setState({
-      cart: cart
+      cart: cart,
     });
 
     //Update cart length and total price
@@ -263,14 +263,14 @@ export class Provider extends Component {
     let totalPrice = [...this.state.totalCartPrice];
 
     let itemPriceMatch;
-    let priceIndex = this.state.totalCartPrice.findIndex(val => {
+    let priceIndex = this.state.totalCartPrice.findIndex((val) => {
       return (itemPriceMatch = val === itemPrice);
     });
 
     // Filter the price in cart that is not equal to the price of the selected
     // item inteded to be removed. Delete everything in the total cart price array using splice,
     // then copy the filtered items back into the array using array.spread() method.
-    let priceFilter = this.state.totalCartPrice.filter(val => {
+    let priceFilter = this.state.totalCartPrice.filter((val) => {
       return val !== itemPrice;
     });
 
@@ -281,7 +281,7 @@ export class Provider extends Component {
     console.log(priceFilter);
 
     this.setState({
-      totalCartPrice: totalPrice
+      totalCartPrice: totalPrice,
     });
 
     setTimeout(this.sumOfTotalCartPrice, 0);
@@ -290,18 +290,18 @@ export class Provider extends Component {
   };
 
   // Write a conditional which only updates state when input value is not empty
-  searchHandler = e => {
+  searchHandler = (e) => {
     let filtered;
     if (e.target.value !== "") {
-      filtered = this.state.phones.filter(val => {
+      filtered = this.state.phones.filter((val) => {
         return val.name.toLowerCase().includes(e.target.value.toLowerCase());
       });
       this.setState({
-        searchFilter: filtered
+        searchFilter: filtered,
       });
     } else {
       this.setState({
-        searchFilter: []
+        searchFilter: [],
       });
     }
   };
@@ -325,7 +325,7 @@ export class Provider extends Component {
           itemCounterValue: this.state.itemCounterValue,
           removeItemHandler: this.removeItemHandler,
           searchHandler: this.searchHandler,
-          searchFilter: this.state.searchFilter
+          searchFilter: this.state.searchFilter,
         }}
       >
         {this.props.children}
