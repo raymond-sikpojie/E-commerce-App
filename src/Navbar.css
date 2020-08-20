@@ -29,7 +29,7 @@
 }
 
 .navbar .link:hover {
-  text-decoration: underline;
+  color: #f6ab6c;
   /* color: rgb(241, 75, 75); */
   /* color: rgb(173, 171, 171); */
 }
